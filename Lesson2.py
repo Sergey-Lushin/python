@@ -2,22 +2,29 @@
 # Определите минимальное число монеток, которые нужно перевернуть, чтобы все монетки были 
 # повернуты вверх одной и той же стороной. Выведите минимальное количество монет, 
 # которые нужно перевернуть
-import random
-n = int(input())
+import random   
+n = int(input())               # решение с использованием списков
 spisok = []
 for i in range(n):
     i = random.randint(0,1)
     spisok.append(i)
-    
-# print(spisok)
 if spisok.count(0) < spisok.count(1):
     print(spisok.count(0))
 else:
     print(spisok.count(1))
-# k = 0
-# for i in range(n):
-#     v = random.randint(0,1)
-#     if v == 1:
-#         k += 1
 
-# print(k if k<n/2 else n-k)
+n = int(input())                # решение с использованием счетчика
+count = 0
+for i in range(n):
+    i = random.randint(0,1)
+    if i == 1:
+        count += 1
+if count < n / 2:
+    print(count)
+else:
+    print(n - count)
+
+#Задача 12: Петя и Катя – брат и сестра. Петя – студент, а Катя – школьница. 
+# Петя помогает Кате по математике. Он задумывает два натуральных числа X и Y (X,Y≤1000), 
+# а Катя должна их отгадать. Для этого Петя делает две подсказки. Он называет сумму этих чисел S 
+# и их произведение P. Помогите Кате отгадать задуманные Петей числа.
